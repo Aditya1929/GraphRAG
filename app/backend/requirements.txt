@@ -1,0 +1,45 @@
+# GraphReason backend dependencies
+# Pins are intentionally loose to work across Python versions (3.11-3.14).
+# Pin tightly only when you need a specific API.
+
+# Web framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+
+# Data validation
+pydantic>=2.5.0
+python-dotenv>=1.0.0
+
+# PDF extraction (3-stage pipeline)
+pdfplumber>=0.10.0
+pymupdf>=1.23.0        # fitz — for rasterizing PDF regions
+
+# OpenAI (embeddings, chat, vision)
+openai>=1.20.0
+
+# Anthropic (optional fallback)
+anthropic>=0.30.0
+
+# Neo4j knowledge graph
+neo4j>=5.14.0
+
+# Postgres async persistence (Neon)
+asyncpg>=0.28.0
+sqlalchemy[asyncio]>=2.0.0
+
+# Clerk JWT verification
+python-jose[cryptography]>=3.3.0
+httpx>=0.25.0
+
+# API key encryption
+cryptography>=41.0.0
+
+# RLM library (recursive language models)
+# Install from GitHub: pip install git+https://github.com/alexzhang13/rlm.git
+# rlm_analysis.py falls back to direct OpenAI calls when unavailable.
+
+# Vector search (legacy support)
+faiss-cpu>=1.13.0
+numpy>=1.26.0
+langchain-text-splitters>=0.2.0
